@@ -9,12 +9,12 @@ import { CicdModule } from "./cicd/cicd.module";
       envFilePath: [`.env.${process.env.NODE_ENV}`, ".env"],
       isGlobal: true,
     }),
-    TypeOrmModule.forRoot({
-      type: "postgres",
-      url: process.env.DB_URL,
-      entities: ["dist/**/*.entity.{js,ts}"],
-      synchronize: true,
-    }),
+    // TypeOrmModule.forRoot({
+    //   type: "postgres",
+    //   url: process.env.DB_URL,
+    //   entities: ["dist/**/*.entity.{js,ts}"],
+    //   synchronize: true,
+    // }),
     CicdModule,
   ],
   controllers: [],
