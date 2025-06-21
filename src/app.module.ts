@@ -1,11 +1,14 @@
 import { Module } from "@nestjs/common";
 import { ConfigModule } from "@nestjs/config";
 import { TypeOrmModule } from "@nestjs/typeorm";
-import { CicdModule } from './cicd/cicd.module';
+import { CicdModule } from "./cicd/cicd.module";
 
 @Module({
   imports: [
-    ConfigModule.forRoot({ envFilePath: ".env", isGlobal: true }),
+    ConfigModule.forRoot({
+      envFilePath: [`.env.${process.env.NODE_ENV}`, ".env"],
+      isGlobal: true,
+    }),
     TypeOrmModule.forRoot({
       type: "postgres",
       url: process.env.DB_URL,
