@@ -24,23 +24,12 @@ jobs:
         env:
           HOST: ${{ secrets.HOST }}
           USERNAME: ${{ secrets.USERNAME }}
-          APP_DIR: /home/${{ secrets.USERNAME }}/ci_cd
+          APP_DIR: ci_cd
           PORT: ${{ secrets.PORT }}
         run: |
           ssh-keyscan -H $HOST >> ~/.ssh/known_hosts
 
           ssh $USERNAME@$HOST "
-            # NodeJS va npm o‘rnatish (agar yo‘q bo‘lsa)
-            if ! command -v npm &> /dev/null; then
-              curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-              sudo apt-get install -y nodejs
-            fi
-
-            # PM2 o‘rnatish (agar yo‘q bo‘lsa)
-            if ! command -v pm2 &> /dev/null; then
-              sudo npm install -g pm2
-            fi
-
             # App katalogi tayyorlash
             if [ ! -d $APP_DIR ]; then
               mkdir -p $APP_DIR
