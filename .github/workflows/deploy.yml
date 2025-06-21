@@ -27,7 +27,7 @@ jobs:
           ssh $USER@$HOST "
             if [ ! -d $APP_DIR ]; then
               mkdir -p $APP_DIR
-              git clone https://github.com/HusanboyMansurov/cicd_github_actions.git $APP_DIR
+              git clone https://github.com/Husniddin-web/ci-cd.git $APP_DIR
               cd $APP_DIR
               echo 'PORT=${PORT}' > .env
             else 
