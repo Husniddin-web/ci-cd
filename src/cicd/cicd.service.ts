@@ -10,7 +10,7 @@ export class CicdService {
 
   findAll() {
     console.log();
-    return `This action returns all cicd`;
+    return `This action returns all cicd updated fetching all method`;
   }
 
   findOne(id: number) {

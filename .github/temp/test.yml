@@ -20,4 +20,4 @@ jobs:
         with:
           file: Dockerfile
           push: true
-          tags: ${{ vars.DOCKERHUB_USERNAME }}/cicd:1.2
+          tags: ${{ vars.DOCKERHUB_USERNAME }}/cicd:1.3
