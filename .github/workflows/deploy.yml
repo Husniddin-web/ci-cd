@@ -25,10 +25,10 @@ jobs:
           HOST: ${{ secrets.HOST }}
           USERNAME: ${{ secrets.USERNAME }}
           APP_DIR: /ci_cd
-          PORT: ${{secrets.PORT}}
+          PORT: ${{ secrets.PORT }}
         run: |
           ssh-keyscan -H $HOST >> ~/.ssh/known_hosts
-          ssh $USER@$HOST "
+          ssh $USERNAME@$HOST "
             if [ ! -d  $APP_DIR ]; then
                mkdir  -p $APP_DIR
                git clone https://github.com/Husniddin-web/ci-cd.git $APP_DIR
