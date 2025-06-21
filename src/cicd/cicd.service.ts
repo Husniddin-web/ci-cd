@@ -14,7 +14,8 @@ export class CicdService {
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} cicd`;
+    console.log();
+    return `This action returns a #${id} cicd updated`;
   }
 
   update(id: number, updateCicdDto: UpdateCicdDto) {
