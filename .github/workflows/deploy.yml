@@ -20,7 +20,7 @@ jobs:
         env:
           HOST: ${{ secrets.HOST }}
           USER: ${{ secrets.USERNAME }}
-          APP_DIR: /ci_cd
+          APP_DIR: ci_cd_app
           PORT: ${{ secrets.PORT }}
         run: |
           ssh-keyscan -H $HOST >> ~/.ssh/known_hosts
