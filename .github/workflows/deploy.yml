@@ -22,6 +22,7 @@ jobs:
           USER: ${{ secrets.USERNAME }}
           APP_DIR: ci_cd_app
           PORT: ${{ secrets.PORT }}
+          SSS: ${{secrets.SSS}}
         run: |
           ssh-keyscan -H $HOST >> ~/.ssh/known_hosts
           ssh $USER@$HOST "
