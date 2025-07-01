@@ -39,6 +39,7 @@ export class CicdController {
   @ApiResponse({ status: 200, description: "List of CICD records" })
   findAll() {
     console.log(process.env.SSS);
+    console.log(process.env.DB_URL);
     return this.cicdService.findAll();
   }
 
