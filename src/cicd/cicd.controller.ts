@@ -25,7 +25,10 @@ export class CicdController {
 
   @Post()
   @ApiOperation({ summary: "Create a new CICD record" })
-  @ApiResponse({ status: 201, description: "CICD record created successfully" })
+  @ApiResponse({
+    status: 201,
+    description: "CICD record created successfully updated ci/cd",
+  })
   @ApiBody({ type: CreateCicdDto })
   create(@Body() createCicdDto: CreateCicdDto) {
     return this.cicdService.create(createCicdDto);
