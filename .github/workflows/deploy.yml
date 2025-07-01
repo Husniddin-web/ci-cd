@@ -35,6 +35,13 @@ jobs:
               cd $APP_DIR
               git pull origin main
             fi
+
+            cat <<EOF > .env
+            PORT=${PORT}
+            SSS=${SSS}
+            
+            EOF
+
             npm install
             npm run build
             pm2 restart ci_cd_app || pm2 start dist/main.js --name ci_cd_app
