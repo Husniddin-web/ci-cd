@@ -23,6 +23,7 @@ jobs:
           APP_DIR: ci_cd_app
           PORT: ${{ secrets.PORT }}
           SSS: ${{secrets.SSS}}
+          CONTENT: ${{secrets.CONTENT}}
         run: |
           ssh-keyscan -H $HOST >> ~/.ssh/known_hosts
           ssh $USER@$HOST "
@@ -39,6 +40,7 @@ jobs:
             cat << EOF > .env
           PORT=$PORT
           SSS=$SSS
+          VALUE=$CONTENT
           EOF
 
             npm install
