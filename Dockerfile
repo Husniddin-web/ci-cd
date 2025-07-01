@@ -12,14 +12,11 @@ WORKDIR /app
 
 COPY --from=builder /app/dist ./dist
 
-
 COPY /*.json ./
 
 RUN npm ci  --omit=dev
 
-
 EXPOSE 3000
-
 
 CMD [ "node" ,"./dist/main.js" ]
 
